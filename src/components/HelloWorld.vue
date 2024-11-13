@@ -7,10 +7,9 @@
         <Button variant="secondary" class="rounded-full bg-black text-white hover:bg-black/90">
           Discover
         </Button>
-        <!-- <Button variant="ghost">Inversiones</Button> -->
       </div>
       <div class="flex items-center gap-4">
-        <!-- <span>Michael Doe</span> -->
+        <!-- Placeholder for user info -->
       </div>
     </nav>
 
@@ -18,81 +17,76 @@
     <main class="container mx-auto py-8">
       <div class="mb-8">
         <h1 class="text-4xl font-normal mb-6">Startups</h1>
-        <!-- <div class="relative">
-          <Search class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 h-4 w-4" />
-          <Input class="pl-10" placeholder="Buscar startups..." />
-        </div> -->
       </div>
 
       <div class="grid gap-6">
-        <Card v-for="i in 2" :key="i" class="overflow-hidden">
-          <CardContent class="p-6">
-            <div class="grid md:grid-cols-4 gap-6 pt-6">
-              <div class="space-y-2">
-                <h3 class="font-medium">Rentennials</h3>
-                <p class="text-sm text-gray-500">Plataforma de renta de propiedades</p>
+        <Card v-for="startup in startups" :key="startup.id" class="overflow-hidden">
+          <CardContent class="p-2 px-4">
+            <div class="grid md:grid-cols-2 gap-6 py-8 pr-4">
+              <div class="space-y-4 flex gap-4">
+                <img src="../assets/alugo.webp" :alt="startup.name" class="w-20 h-20 object-cover rounded-lg" />
+                <div class="flex flex-col">
+                  <h3 class="font-medium text-xl">{{ startup.name }}</h3>
+                  <p class="text-sm text-gray-500">{{ startup.description }}</p>
+                </div>
               </div>
-              <div class="space-y-2">
-                <h4 class="text-sm font-medium text-gray-500">Valoración</h4>
-                <p>$2.5M USD</p>
+              <div class="flex justify-between">
+                <div>
+                  <h4 class="text-sm font-medium text-gray-500">Fundada</h4>
+                  <p>{{ startup.founded }}</p>
+                </div>
+                <div>
+                  <h4 class="text-sm font-medium text-gray-500">Etapa</h4>
+                  <p>{{ startup.stage }}</p>
+                </div>
+                <div>
+                  <h4 class="text-sm font-medium text-gray-500">Tipo</h4>
+                  <p>{{ startup.type.join(', ') }}</p>
+                </div>
+                <div>
+                  <h4 class="text-sm font-medium text-gray-500">Industria</h4>
+                  <p>{{ startup.industry }}</p>
+                </div>
               </div>
-              <div class="space-y-2">
-                <h4 class="text-sm font-medium text-gray-500">Mínimo</h4>
-                <p>$1,000 USD</p>
-              </div>
-              <!-- <div class="space-y-2">
-                <h4 class="text-sm font-medium text-gray-500">Recaudado</h4>
-                <p>$500,000 USD</p>
+              <!-- <div class="space-y-4">
+                <div>
+                  <h4 class="text-sm font-medium text-gray-500">Website</h4>
+                  <a :href="startup.website" target="_blank" class="text-blue-600 hover:underline">Visitar sitio</a>
+                </div>
+                <div>
+                  <h4 class="text-sm font-medium text-gray-500">Pitch Deck</h4>
+                  <a :href="startup.pitchDeck" target="_blank" class="text-blue-600 hover:underline">Ver Pitch Deck</a>
+                </div>
+                <div>
+                  <h4 class="text-sm font-medium text-gray-500">Estadio</h4>
+                  <p>{{ startup.status }}</p>
+                </div>
               </div> -->
             </div>
           </CardContent>
           <Separator />
           <CardFooter class="pt-5 flex justify-between items-center">
             <div class="flex items-center gap-4">
-              <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Abierto</span>
-              <!-- <span class="text-sm text-gray-500">Cierra en 15 días</span> -->
+              <span :class="[
+                'px-3 py-1 rounded-full text-sm',
+                startup.isOpen ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'
+              ]">
+                {{ startup.isOpen ? 'Abierto' : 'Próximamente' }}
+              </span>
             </div>
-            <a href="/c">
-              <Button class="gap-2 flex items-center">
-                Ver más
+            <div class="flex gap-4">
+              <!-- <Button variant="outline" class="gap-2 flex items-center">
+                Invertir
                 <ArrowUpRight class="h-4 w-4" />
-              </Button>
-            </a>
-          </CardFooter>
-        </Card>
-        <Card v-for="i in 1" :key="i" class="overflow-hidden">
-          <CardContent class="p-6">
-            <div class="grid md:grid-cols-4 gap-6 pt-6">
-              <div class="space-y-2">
-                <h3 class="font-medium">Rentennials</h3>
-                <p class="text-sm text-gray-500">Plataforma de renta de propiedades</p>
-              </div>
-              <div class="space-y-2">
-                <h4 class="text-sm font-medium text-gray-500">Valoración</h4>
-                <p>$2.5M USD</p>
-              </div>
-              <div class="space-y-2">
-                <h4 class="text-sm font-medium text-gray-500">Mínimo</h4>
-                <p>$1,000 USD</p>
-              </div>
-              <!-- <div class="space-y-2">
-                <h4 class="text-sm font-medium text-gray-500">Recaudado</h4>
-                <p>$500,000 USD</p>
-              </div> -->
+              </Button> -->
+              <a href="/startup/alugo">
+
+                <Button class="gap-2 flex items-center">
+                  Ver más
+                  <ArrowUpRight class="h-4 w-4" />
+                </Button>
+              </a>
             </div>
-          </CardContent>
-          <Separator />
-          <CardFooter class="pt-5 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-              <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">Proximamente</span>
-              <!-- <span class="text-sm text-gray-500">Cierra en 15 días</span> -->
-            </div>
-            <a href="/c">
-              <Button class="gap-2 flex items-center">
-                Ver más
-                <ArrowUpRight class="h-4 w-4" />
-              </Button>
-            </a>
           </CardFooter>
         </Card>
       </div>
@@ -102,12 +96,52 @@
 
 <script setup>
 import { ref } from 'vue'
-import { ArrowUpRight, Search } from 'lucide-vue-next'
-import { Card, CardContent, CardFooter, Input, Separator, Button } from './index.js'
+import { ArrowUpRight } from 'lucide-vue-next'
+import { Card, CardContent, CardFooter, Separator, Button } from './index.js'
 
-defineProps({
-  msg: String,
-})
-
-const count = ref(0)
+const startups = ref([
+  {
+    id: 1,
+    name: 'Alugo',
+    image: '../assets/vue.svg',
+    description: 'Todo se alquila',
+    founded: '2024',
+    stage: 'Pre-Seed',
+    type: ['B2B', 'B2C'],
+    industry: 'e-commerce',
+    website: 'https://recy.example.com',
+    pitchDeck: 'https://recy.example.com/pitch-deck',
+    status: 'MVP',
+    isOpen: true
+  },
+  {
+    id: 1,
+    name: 'Alugo',
+    image: '../assets/vue.svg',
+    description: 'Todo se alquila',
+    founded: '2024',
+    stage: 'Pre-Seed',
+    type: ['B2B', 'B2C'],
+    industry: 'e-commerce',
+    website: 'https://recy.example.com',
+    pitchDeck: 'https://recy.example.com/pitch-deck',
+    status: 'MVP',
+    isOpen: true
+  },
+  {
+    id: 1,
+    name: 'Alugo',
+    image: '../assets/vue.svg',
+    description: 'Todo se alquila',
+    founded: '2024',
+    stage: 'Pre-Seed',
+    type: ['B2B', 'B2C'],
+    industry: 'e-commerce',
+    website: 'https://recy.example.com',
+    pitchDeck: 'https://recy.example.com/pitch-deck',
+    status: 'MVP',
+    isOpen: false
+  },
+  // Puedes agregar más startups aquí
+])
 </script>

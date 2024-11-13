@@ -4,9 +4,11 @@
     <nav class="flex items-center justify-between p-6 bg-white">
       <div class="flex items-center gap-6">
         <router-link to="/" class="text-xl font-bold">Vefy</router-link>
-        <button class="px-4 py-2 rounded-md text-sm font-medium transition-colors bg-gray-100 text-gray-900 hover:bg-gray-200">
-          Discover
-        </button>
+        <a href="/">
+          <button class="px-4 py-2 rounded-md text-sm font-medium transition-colors bg-gray-100 text-gray-900 hover:bg-gray-200">
+            Discover
+          </button>
+        </a>
         <!-- <Button variant="ghost">Inversiones</Button> -->
       </div>
       <div class="flex items-center gap-4">
@@ -17,7 +19,7 @@
     <!-- Main Content -->
     <main class="container mx-auto py-8">
       <div class="max-w-3xl mx-auto">
-        <h1 class="text-4xl font-normal mb-8 text-center">Inverti en Rentennials</h1>
+        <h1 class="text-4xl font-normal mb-8 text-center">Inverti en Alugo</h1>
 
         <!-- Progress Steps -->
         <div class="relative mb-12">
@@ -32,11 +34,11 @@
             </div>
             <div class="flex flex-col items-center">
               <div
-                class="w-8 h-8 rounded-full border-2 border-black bg-white text-black flex items-center justify-center mb-2"
+                class="w-8 h-8 rounded-full border-2 border-gray-200 text-gray-400 flex items-center justify-center mb-2"
               >
                 2
               </div>
-              <span class="text-sm">Aceptación del SAFE</span>
+              <span class="text-sm text-gray-400">Aceptación del SAFE</span>
             </div>
             <div class="flex flex-col items-center">
               <div
@@ -82,7 +84,7 @@ export default {
   },
   methods: {
     onFormComplete (data) {
-      this.router.push('/d')
+      this.router.push('/wait')
     }
   }
 }

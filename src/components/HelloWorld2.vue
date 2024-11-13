@@ -17,7 +17,7 @@
     <!-- Main Content -->
     <main class="container mx-auto py-8">
       <div class="max-w-3xl mx-auto">
-        <h1 class="text-4xl font-normal mb-8 text-center">Inverti en Rentennials</h1>
+        <h1 class="text-4xl font-normal mb-8 text-center">Inverti en Alugo</h1>
 
         <!-- Progress Steps -->
         <div class="relative mb-12">
@@ -53,7 +53,7 @@
         <Card class="bg-[#1e1e1e] text-white">
           <CardHeader>
             <CardTitle class="flex items-center justify-between">
-              <span>SAFE - Michael &lt;&gt; Rentennials</span>
+              <span>SAFE - Michael &lt;&gt; Alugo</span>
               <Button variant="outline" size="sm" class="gap-2">
                 <Download class="h-4 w-4" />
                 Descargar

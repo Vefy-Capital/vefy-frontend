@@ -170,7 +170,7 @@
                 </dl>
               </CardContent>
               <CardFooter>
-                <a href="/e">
+                <a href="/startup/alugo/invest">
                   <Button class="w-full flex items-center justify-center gap-2">
                     Invertir
                     <ArrowRight class="ml-2 h-4 w-4" />
@@ -189,21 +189,36 @@
                     <!-- <img src="/placeholder.svg" alt="Joaquín Martinez Borque" class="w-12 h-12 rounded-full" /> -->
                     <div>
                       <p class="font-medium">Joaquín Martinez Borque</p>
-                      <p class="text-sm text-gray-500">CEO</p>
+                      <div class="">
+
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <p class="text-sm text-gray-500">CEO</p>
+                        <Linkedin class="cursor-pointer h-3 w-4 text-[#0e76a8]" aria-hidden="true" fill="#0e76a8" fill-color="#ffffff"/>
+                      </div>
+                      
                     </div>
                   </li>
                   <li class="flex items-center space-x-4">
                     <!-- <img src="/placeholder.svg" alt="Jorge Ignacio Pico" class="w-12 h-12 rounded-full" /> -->
                     <div>
                       <p class="font-medium">Jorge Ignacio Pico</p>
-                      <p class="text-sm text-gray-500">COO</p>
+                      <div class="flex items-center gap-1">
+                        <p class="text-sm text-gray-500">COO</p>
+                        <Link class="cursor-pointer h-3 w-4 text-gray-500" aria-hidden="true"/>
+                      </div>
+                      <!-- <p class="text-sm text-gray-500">COO</p> -->
                     </div>
                   </li>
                   <li class="flex items-center space-x-4">
                     <!-- <img src="/placeholder.svg" alt="Rafael Nicolas Trozzo" class="w-12 h-12 rounded-full" /> -->
                     <div>
                       <p class="font-medium">Rafael Nicolas Trozzo</p>
-                      <p class="text-sm text-gray-500">CTO</p>
+                      <div class="flex items-center gap-1">
+                        <p class="text-sm text-gray-500">CTO</p>
+                        <Linkedin class="cursor-pointer h-3 w-4 text-[#0e76a8]" aria-hidden="true" fill="#0e76a8" fill-color="#ffffff"/>
+                      </div>
+                      <!-- <p class="text-sm text-gray-500">CTO</p> -->
                     </div>
                   </li>
                 </ul>
@@ -257,7 +272,7 @@
 </template>
 
 <script setup>
-import { ArrowRight, Calendar, DollarSign, Globe, Users } from 'lucide-vue-next'
+import { ArrowRight, Calendar, DollarSign, Globe, Users, Linkedin, Link } from 'lucide-vue-next'
 import { Card, CardContent, CardHeader, CardFooter, CardTitle, Button } from './index.js'
 
 </script>

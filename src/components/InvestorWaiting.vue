@@ -17,7 +17,7 @@
     <!-- Main Content -->
     <main class="container mx-auto py-8">
       <div class="max-w-3xl mx-auto">
-        <h1 class="text-4xl font-normal mb-8 text-center">Inverti en Rentennials</h1>
+        <h1 class="text-4xl font-normal mb-8 text-center">Inverti en Alugo</h1>
 
         <!-- Progress Steps -->
         <div class="relative mb-12">
@@ -38,11 +38,11 @@
             </div>
             <div class="flex flex-col items-center">
               <div
-                class="w-8 h-8 rounded-full border-2 border-black bg-white text-black flex items-center justify-center mb-2"
+                class="w-8 h-8 rounded-full border-2 border-gray-200 text-gray-400 flex items-center justify-center mb-2"
               >
                 3
               </div>
-              <span class="text-sm">Transferencia</span>
+              <span class="text-sm text-gray-400">Transferencia</span>
             </div>
           </div>
           <div class="absolute top-4 left-0 right-0 h-[2px] bg-gray-200 -z-10">
@@ -55,11 +55,11 @@
             <CardTitle class="text-2xl font-normal">SAFE Enviado a la Startup</CardTitle>
           </CardHeader>
           <CardContent class="space-y-6">
-            <div class="w-20 h-20 mx-auto rounded-full bg-black text-white flex items-center justify-center">
+            <!-- <div class="w-20 h-20 mx-auto rounded-full bg-black text-white flex items-center justify-center">
               <Clock class="h-10 w-10" />
-            </div>
+            </div> -->
             <p class="text-lg">
-              En las próximas 72 horas te estaremos contactando por correo para continuar en caso de éxito.
+              En las próximas 72 horas te estaremos contactando <br/> por correo para continuar en caso de éxito.
             </p>
             <p class="text-sm text-gray-500">
               Mientras tanto, puedes revisar otras oportunidades de inversión en nuestra plataforma.
@@ -73,12 +73,37 @@
           </CardContent>
         </Card>
       </div>
+      <Button v-on:click="onPush">
+        Abrir Mail
+      </Button>
     </main>
   </div>
 </template>
 
-<script setup>
-import { Check, Clock } from 'lucide-vue-next'
+<script>
+import { useRouter } from 'vue-router'
+import { Check, Component } from 'lucide-vue-next'
 import { Card, CardContent, CardHeader, CardTitle, Button } from './index.js'
 
+export default {
+  name: 'App',
+  components: {
+    Card,
+    CardContent,
+    CardHeader,
+    CardTitle,
+    Button,
+    Component,
+    Check
+  },
+  setup() {
+    const router = useRouter()
+    return { router }
+  },
+  methods: {
+    onPush () {
+      this.router.push('/startup/alugo/transfer')
+    }
+  }
+}
 </script>

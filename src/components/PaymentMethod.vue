@@ -17,7 +17,7 @@
     <!-- Main Content -->
     <main class="container mx-auto py-8">
       <div class="max-w-3xl mx-auto">
-        <h1 class="text-4xl font-normal mb-8 text-center">Inverti en Rentennials</h1>
+        <h1 class="text-4xl font-normal mb-8 text-center">Inverti en Alugo</h1>
 
         <!-- Progress Steps -->
         <div class="relative mb-12">
@@ -118,7 +118,7 @@
                 <h3 class="font-medium mb-2">Datos para transferencia USD</h3>
                 <div class="space-y-2 text-sm">
                   <p><span class="font-medium">Banco:</span> Bank of America</p>
-                  <p><span class="font-medium">Titular:</span> Rentennials LLC</p>
+                  <p><span class="font-medium">Titular:</span> Alugo LLC</p>
                   <p><span class="font-medium">Cuenta:</span> 123456789</p>
                   <p><span class="font-medium">Swift:</span> BOFAUS3N</p>
                   <p><span class="font-medium">Dirección:</span> 123 Wall Street, NY</p>
@@ -129,10 +129,10 @@
                 <h3 class="font-medium mb-2">Datos para transferencia ARS</h3>
                 <div class="space-y-2 text-sm">
                   <p><span class="font-medium">Banco:</span> Banco Santander</p>
-                  <p><span class="font-medium">Titular:</span> Rentennials SA</p>
+                  <p><span class="font-medium">Titular:</span> Alugo SA</p>
                   <p><span class="font-medium">CBU:</span> 0720000720000000000000</p>
                   <p><span class="font-medium">CUIT:</span> 30-12345678-9</p>
-                  <p><span class="font-medium">Alias:</span> RENTENNIALS.ARS</p>
+                  <p><span class="font-medium">Alias:</span> ALUGO.ARS</p>
                 </div>
               </div>
 
