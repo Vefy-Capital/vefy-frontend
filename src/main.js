@@ -17,7 +17,7 @@ const router = new createRouter({
       { path: '/', component: HelloWorld },
       { path: '/a', component: HelloWorld2 },
       { path: '/startup/:startupName/transfer', component: PaymentMethod },
-      { path: '/startup/:startupName/alugo', component: StartupDetails },
+      { path: '/startup/:startupName', component: StartupDetails },
       { path: '/wait', component: InvestorWaiting },
       { path: '/startup/:startupName/invest', component: InvestorSafe },
     ],
