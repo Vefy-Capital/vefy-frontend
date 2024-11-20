@@ -9,17 +9,15 @@
             Discover
           </button>
         </a>
-        <!-- <Button variant="ghost">Inversiones</Button> -->
       </div>
       <div class="flex items-center gap-4">
-        <!-- <span>Michael Doe</span> -->
       </div>
     </nav>
 
     <!-- Main Content -->
     <main class="container mx-auto py-8">
       <div class="max-w-3xl mx-auto">
-        <h1 class="text-4xl font-normal mb-8 text-center">Inverti en Alugo</h1>
+        <h1 class="text-4xl font-normal mb-8 text-center">Inverti en {{ startupName }}</h1>
 
         <!-- Progress Steps -->
         <div class="relative mb-12">
@@ -56,7 +54,7 @@
 
         <Card class="bg-[#1c1c1c] text-white">
           <DocusealForm
-            :src="'https://docuseal.com/d/LEVGR9rhZYf86M'"
+            :src="docusealUrl"
             :email="'signer@example.com'"
             @complete="onFormComplete"
           />
@@ -71,7 +69,8 @@
 import { Card, CardContent, CardHeader, CardTitle, Button } from './index.js'
 import { DocusealForm } from '@docuseal/vue'
 import { Check, Download } from 'lucide-vue-next'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
+import { computed } from 'vue'
 
 export default {
   name: 'App',
@@ -80,7 +79,22 @@ export default {
   },
   setup() {
     const router = useRouter()
-    return { router }
+    const route = useRoute()
+
+    const startupName = computed(() => {
+      return route.params.startupName
+    })
+
+    const docusealUrl = computed(() => {
+      const docId = route.query.docId
+      return `https://docuseal.com/d/${docId}`
+    })
+
+    return { 
+      router,
+      startupName,
+      docusealUrl
+    }
   },
   methods: {
     onFormComplete (data) {

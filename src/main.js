@@ -16,10 +16,10 @@ const router = new createRouter({
     routes: [
       { path: '/', component: HelloWorld },
       { path: '/a', component: HelloWorld2 },
-      { path: '/startup/alugo/transfer', component: PaymentMethod },
-      { path: '/startup/alugo', component: StartupDetails },
+      { path: '/startup/:startupName/transfer', component: PaymentMethod },
+      { path: '/startup/:startupName/alugo', component: StartupDetails },
       { path: '/wait', component: InvestorWaiting },
-      { path: '/startup/alugo/invest', component: InvestorSafe },
+      { path: '/startup/:startupName/invest', component: InvestorSafe },
     ],
 })
 app.use(router)
